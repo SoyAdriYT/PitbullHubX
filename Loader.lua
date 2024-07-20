@@ -9,7 +9,7 @@
 
 ]]--
 
-local scriptURL = "https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Blade%20Ball.lua"
+local scriptURL = "https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Identifier.lua"
 
 local function executeScriptFromURL(url)
     local success, response = pcall(function()
