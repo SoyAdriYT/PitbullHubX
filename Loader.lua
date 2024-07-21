@@ -8,42 +8,62 @@
 ╰╯╱╱╰━━╯╱╰╯╱╰━━━┻━━━┻━━━┻━━━╯╰╯╱╰┻━━━┻━━━╯╰━╯╰━╯
 
 ]]--
-local gameId = game.PlaceId
-
-local scriptURLs = {
-    [4623386862] = "https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Piggy.lua",
-    [5661005779] = "https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Piggy.lua",
-    default = "https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Blade%20Ball.lua"
+local gameScripts = {
+    ["13772394625"] = function()
+        print("[PitbullHub] Blade Ball")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Blade%20Ball.lua", true))()
+    end,
+    ["14732610803"] = function()
+        print("[PitbullHub] Blade Ball")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Blade%20Ball.lua", true))()
+    end,
+    ["15131065025"] = function()
+        print("[PitbullHub] Blade Ball")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Blade%20Ball.lua", true))()
+    end,
+    ["15144787112"] = function()
+        print("[PitbullHub] Blade Ball")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Blade%20Ball.lua", true))()
+    end,
+    ["15264892126"] = function()
+        print("[PitbullHub] Blade Ball")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Blade%20Ball.lua", true))()
+    end,
+    ["14915220621"] = function()
+        print("[PitbullHub] Blade Ball")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Blade%20Ball.lua", true))()
+    end,
+    ["15517169103"] = function()
+        print("[PitbullHub] Blade Ball")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Blade%20Ball.lua", true))()
+    end,
+    ["15234596844"] = function()
+        print("[PitbullHub] Blade Ball")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Blade%20Ball.lua", true))()
+    end,
+    ["16581648071"] = function()
+        print("[PitbullHub] Blade Ball")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Blade%20Ball.lua", true))()
+    end,
+    ["15509350986"] = function()
+        print("[PitbullHub] Blade Ball")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Blade%20Ball.lua", true))()
+    end,
+    ["4623386862"] = function()
+        print("[PitbullHub] Piggy")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Piggy.lua", true))()
+    end,
+    ["5661005779"] = function()
+        print("[PitbullHub] Piggy")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Piggy.lua", true))()
+    end,
 }
 
-local function executeScriptFromURL(url)
-    local success, response = pcall(function()
-        return game:HttpGet(url, true)
-    end)
-    
-    if success then
-        local loadSuccess, loadError = pcall(function()
-            loadstring(response)()
-        end)
-        
-        if loadSuccess then
-            print("Script executed successfully from URL: " .. url)
-        else
-            warn("Error executing the script: " .. loadError)
-        end
-    else
-        warn("Error fetching the script from URL: " .. url)
-    end
-end
+local gameId = tostring(game.PlaceId)
 
-local function main()
-    local scriptURL = scriptURLs[gameId] or scriptURLs.default
-    
-    print("Starting execution of PitbullHubX script for game with ID: " .. gameId)
-    
-    executeScriptFromURL(scriptURL)
-    
-    print("Finished execution of script for game with ID: " .. gameId)
+if gameScripts[gameId] then
+    gameScripts[gameId]()
+else
+    print("Running PitbullHub Universal For " .. gameId)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Universal.lua", true))()
 end
-
-main()
