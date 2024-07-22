@@ -49,14 +49,6 @@ local gameScripts = {
         print("[PitbullHub] Blade Ball")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Blade%20Ball.lua", true))()
     end,
-    ["4623386862"] = function()
-        print("[PitbullHub] Piggy")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Piggy.lua", true))()
-    end,
-    ["5661005779"] = function()
-        print("[PitbullHub] Piggy")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Piggy.lua", true))()
-    end,
 }
 
 local gameId = tostring(game.PlaceId)
@@ -64,6 +56,6 @@ local gameId = tostring(game.PlaceId)
 if gameScripts[gameId] then
     gameScripts[gameId]()
 else
-    print("Running PitbullHub Universal For " .. gameId)
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Universal.lua", true))()
+    print("Unsupported game: " .. gameId)
 end
+
