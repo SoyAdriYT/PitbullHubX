@@ -74,9 +74,7 @@ end
 
 local function main()
     logScriptStart()
-
     initializeScriptExecution(scriptURL)
-
     logScriptEnd()
 end
 
@@ -84,7 +82,13 @@ local function detailedScriptExecution()
     local function deepNestedFunctionLevel1()
         local function deepNestedFunctionLevel2()
             local function deepNestedFunctionLevel3()
-                main()
+                local function deepNestedFunctionLevel4()
+                    local function deepNestedFunctionLevel5()
+                        main()
+                    end
+                    deepNestedFunctionLevel5()
+                end
+                deepNestedFunctionLevel4()
             end
             deepNestedFunctionLevel3()
         end
@@ -100,7 +104,13 @@ end
 local function additionalNestedFunction1()
     local function additionalNestedFunction2()
         local function additionalNestedFunction3()
-            outerFunctionWrapper()
+            local function additionalNestedFunction4()
+                local function additionalNestedFunction5()
+                    outerFunctionWrapper()
+                end
+                additionalNestedFunction5()
+            end
+            additionalNestedFunction4()
         end
         additionalNestedFunction3()
     end
@@ -110,15 +120,93 @@ end
 local function furtherNestedFunction1()
     local function furtherNestedFunction2()
         local function furtherNestedFunction3()
-            additionalNestedFunction1()
+            local function furtherNestedFunction4()
+                local function furtherNestedFunction5()
+                    additionalNestedFunction1()
+                end
+                furtherNestedFunction5()
+            end
+            furtherNestedFunction4()
         end
         furtherNestedFunction3()
     end
     furtherNestedFunction2()
 end
 
-local function finalFunctionWrapper()
-    furtherNestedFunction1()
+local function ultimateNestedFunction1()
+    local function ultimateNestedFunction2()
+        local function ultimateNestedFunction3()
+            local function ultimateNestedFunction4()
+                local function ultimateNestedFunction5()
+                    furtherNestedFunction1()
+                end
+                ultimateNestedFunction5()
+            end
+            ultimateNestedFunction4()
+        end
+        ultimateNestedFunction3()
+    end
+    ultimateNestedFunction2()
 end
 
-finalFunctionWrapper()
+local function finalFunctionWrapper()
+    ultimateNestedFunction1()
+end
+
+local function finalLayer1()
+    local function finalLayer2()
+        local function finalLayer3()
+            local function finalLayer4()
+                local function finalLayer5()
+                    finalFunctionWrapper()
+                end
+                finalLayer5()
+            end
+            finalLayer4()
+        end
+        finalLayer3()
+    end
+    finalLayer2()
+end
+
+local function finalExecutionWrapper()
+    finalLayer1()
+end
+
+local function additionalLayer1()
+    local function additionalLayer2()
+        local function additionalLayer3()
+            local function additionalLayer4()
+                local function additionalLayer5()
+                    finalExecutionWrapper()
+                end
+                additionalLayer5()
+            end
+            additionalLayer4()
+        end
+        additionalLayer3()
+    end
+    additionalLayer2()
+end
+
+local function ultimateFinalWrapper()
+    additionalLayer1()
+end
+
+local function finalUltimateLayer1()
+    local function finalUltimateLayer2()
+        local function finalUltimateLayer3()
+            local function finalUltimateLayer4()
+                local function finalUltimateLayer5()
+                    ultimateFinalWrapper()
+                end
+                finalUltimateLayer5()
+            end
+            finalUltimateLayer4()
+        end
+        finalUltimateLayer3()
+    end
+    finalUltimateLayer2()
+end
+
+finalUltimateLayer1()
