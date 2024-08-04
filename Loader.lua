@@ -66,7 +66,7 @@ function animateLoadingBar()
     wait(0.5)
     gui:Destroy()
 
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Loader.lua", true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Games/Blade%20Ball.lua", true))()
 end
 
 function updateProgress(progress)
@@ -82,4 +82,3 @@ end
 gui:GetPropertyChangedSignal("AbsoluteSize"):Connect(adjustFramePosition)
 adjustFramePosition()
 spawn(animateLoadingBar)
- 
