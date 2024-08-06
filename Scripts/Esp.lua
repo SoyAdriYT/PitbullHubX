@@ -8,7 +8,6 @@
 ╰╯╱╱╰━━╯╱╰╯╱╰━━━┻━━━┻━━━┻━━━╯╰╯╱╰┻━━━┻━━━╯╰━╯╰━╯╰━━━┻━━━┻╯╱╱╱╰━━━┻━━━┻╯╰━┻━━┻╯╱╱╱╱╰╯
 
 ]]--
---Settings--
 local ESP = {
     Enabled = false,
     Boxes = true,
@@ -27,7 +26,6 @@ local ESP = {
     Overrides = {}
 }
 
---Declarations--
 local cam = workspace.CurrentCamera
 local plrs = game:GetService("Players")
 local plr = plrs.LocalPlayer
@@ -36,7 +34,6 @@ local mouse = plr:GetMouse()
 local V3new = Vector3.new
 local WorldToViewportPoint = cam.WorldToViewportPoint
 
---Functions--
 local function Draw(obj, props)
 	local new = Drawing.new(obj)
 	
@@ -87,7 +84,7 @@ function ESP:Toggle(bool)
     self.Enabled = bool
     if not bool then
         for i,v in pairs(self.Objects) do
-            if v.Type == "Box" then --fov circle etc
+            if v.Type == "Box" then
                 if v.Temporary then
                     v:Remove()
                 else
@@ -117,7 +114,6 @@ function ESP:AddObjectListener(parent, options)
                         IsEnabled = options.IsEnabled,
                         RenderInNil = options.RenderInNil
                     })
-                    --TODO: add a better way of passing options
                     if options.OnAdded then
                         coroutine.wrap(options.OnAdded)(box)
                     end
@@ -153,7 +149,6 @@ end
 
 function boxBase:Update()
     if not self.PrimaryPart then
-        --warn("not supposed to print", self.Object)
         return self:Remove()
     end
 
@@ -192,7 +187,6 @@ function boxBase:Update()
         color = ESP.HighlightColor
     end
 
-    --calculations--
     local cf = self.PrimaryPart.CFrame
     if ESP.FaceCamera then
         cf = CFrame.new(cf.p, cam.CFrame.p)
@@ -275,7 +269,7 @@ function ESP:Add(obj, options)
     local box = setmetatable({
         Name = options.Name or obj.Name,
         Type = "Box",
-        Color = options.Color --[[or self:GetColor(obj)]],
+        Color = options.Color,
         Size = options.Size or self.BoxSize,
         Object = obj,
         Player = options.Player or plrs:GetPlayerFromCharacter(obj),
