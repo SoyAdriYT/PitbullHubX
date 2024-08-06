@@ -8,8 +8,6 @@
 ╰╯╱╱╰━━╯╱╰╯╱╰━━━┻━━━┻━━━┻━━━╯╰╯╱╰┻━━━┻━━━╯╰━╯╰━╯╰━━━┻━━━┻╯╱╱╰╯╱╱╰━━━┻╯╰━╯╱╰╯
 
 ]]--
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHubX/main/Library/V4.lua"))()
-
 local function getExecutorName()
     local executor = "Unknown"
     
