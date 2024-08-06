@@ -21,7 +21,7 @@ local function getExecutorName()
 end
 
 local supportedExploits = {
-    "Cubix",
+    "Cubix Android",
     "Solara",
     "Delta",
     "Arceus X",
