@@ -47,7 +47,7 @@ if isSupported then
 else
     local Notify = Library:MakeNotify({
         Title = "Unsupported",
-        Text = "Your executor, " .. executorName .. ", was not found in the list of supported exploits, which may cause errors in Pitbull Hub.",
+        Text = "Your executor, " .. executorName .. ", was not found in the list of supported exploits, which may cause errors in Pitbull Hub X.",
         Time = 5
     })
 end
